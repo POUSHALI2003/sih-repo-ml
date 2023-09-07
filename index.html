@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UmeedX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="logo">
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>   
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Contact</a></li>      
+                </ul>
+            </div>
+        </nav>
+        <div class="information">
+            <div class="overlay"></div>
+            <img src="machine.jpg" alt="" class="machine">
+            <div id="circle">
+                <div class="feature one">
+                    <img src="process.png" alt="">
+                    <div>
+                        <h1>lorem</h1>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div> 
+                </div>
+                <div class="feature two">
+                    <img src="process.png" alt="">
+                    <div>
+                        <h1>lorem</h1>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div> 
+                </div>
+                <div class="feature three">
+                    <img src="process.png" alt="">
+                    <div>
+                        <h1>lorem</h1>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div> 
+                </div>
+                <div class="feature four">
+                    <img src="process.png" alt="">
+                    <div>
+                        <h1>lorem</h1>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div> 
+                </div>
+            </div>
+            <div>
+                
+            </div>
+        </div>
+        <div class="controls">
+            <img src="arrow.png" alt="" id="upBtn">
+            <h3>Features</h3>
+            <img src="arrow.png" alt="" id="downBtn">
+        </div>
+
+    </div>
+    <div class="bottom-div">
+        <form action="#" method="post" enctype="multipart/form-data">
+    
+            <input type="file" id="image" class="image-input" accept="image/*" name="image">
+            <label for="image" class="image-label">Se------------------------------lect Image</label>
+
+            <input type="submit" value="Submit" class="submit-button">
+        </form>
+        <img id="preview" class="preview-image" src="#" alt="Image Preview">
+    </div>
+<script>var circle = document.getElementById("circle");
+    var upBtn = document.getElementById("upBtn");
+    var downBtn = document.getElementById("downBtn");
+    
+    var rotateValue = circle.style.transform;
+    var rotateSum;
+    upBtn.onclick = function(){
+        rotateSum = rotateValue + "rotate(-90deg)";
+        circle.style.transform = rotateSum;
+        rotateValue = rotateSum;
+    }   
+    downBtn.onclick = function(){
+        rotateSum = rotateValue + "rotate(90deg)";
+        circle.style.transform = rotateSum;
+        rotateValue = rotateSum;
+    }  
+    document.getElementById("image").addEventListener("change", function () {
+        const fileInput = this;
+        const preview = document.getElementById("preview");
+        const file = fileInput.files[0];
+    
+        if (file) {
+            const reader = new FileReader();
+    
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+            };
+    
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+    });</script>
+   
+</body>
+</html>
